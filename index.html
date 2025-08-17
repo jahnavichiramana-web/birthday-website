@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Secret Birthday Surprise 🎂</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: linear-gradient(to right, #ff9a9e, #fad0c4);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    h1 { color: #222; }
+    .hidden { display: none; }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-top: 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: #ff4081;
+      color: white;
+    }
+    .message {
+      font-size: 24px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔐 Encrypted Birthday Message</h1>
+  <p id="encrypted">Kdssb#Eluwkgdb/#Udkxo$#🎂🎉</p>
+
+  <button onclick="decode()">Decode 🎁</button>
+
+  <p id="decoded" class="message hidden"></p>
+
+  <script>
+    function decode() {
+      let encrypted = document.getElementById("encrypted").textContent;
+      let decoded = "";
+      for (let i = 0; i < encrypted.length; i++) {
+        decoded += String.fromCharCode(encrypted.charCodeAt(i) - 3);
+      }
+      document.getElementById("decoded").textContent = "🎉 " + decoded + " 🎉";
+      document.getElementById("decoded").classList.remove("hidden");
+    }
+  </script>
+</body>
+</html>
